@@ -1,0 +1,20 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+ main{
+    display: flex;
+ }
+ main .d{
+    width: 25%;
+    height: 100vh;
+ background-color: aqua;
+ }
+ main .c{
+    width: 75%;
+    height: 100vh;
+ }
+ main #map{
+    height: 100vh;
+}
