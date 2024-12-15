@@ -15,14 +15,15 @@ const storeList = [
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [77.102493, 28.704060]
+        "coordinates": [85.141392, 25.594095]
       },
       "properties": {
-        "name": "Pizza outlet 2",
-        "address": "Connaught Place, Delhi 110001, India",
-        "phone": "23 2323 2324"
+        "name": "Pizza outlet 3",
+        "address": "Fraser Road, Patna, Bihar 800001, India",
+        "phone": "23 2323 2325"
       }
     },
+    
     {
       "type": "Feature",
       "geometry": {

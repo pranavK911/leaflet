@@ -1,5 +1,5 @@
-// console.log("hello");
-var map = L.map('map').setView([25.771103, 87.482185], 5.2);
+
+var map = L.map('map').setView([25.771103, 87.482185], 5);
 const tileLaye='https://tile.openstreetmap.org/{z}/{x}/{y}.png'
 
 const tile=L.tileLayer(tileLaye);
@@ -32,6 +32,9 @@ function getDetails(){
         const li=document.createElement('li');
         const div=document.createElement('div');
         const a=document.createElement('a');
+        a.addEventListener('click',()=>{
+           flyTostore(store)
+        })
         const p=document.createElement('p');
        div.classList.add('ulli')
         a.innerText=store.properties.name;
@@ -41,15 +44,38 @@ function getDetails(){
         div.appendChild(a);
         div.appendChild(p);
         li.appendChild(div)
-        ul.appendChild(li);
-        // console.log(ul);
-        
-        
+        ul.appendChild(li);    
     })
-    
-
-
-
-
 }
 getDetails()
+let icon=L.icon({
+        iconUrl:'marker.png',
+        iconSize:[40,50]
+    })
+function makepopUp(features){
+    return `
+    <div>
+    <h4>${features.properties.name}</h4>
+    <p>${features.properties.address}</p>
+    <a href:"tel:${features.properties.phone}">${features.properties.phone}</a>
+    </div>
+    `
+    }
+function onEachFeature(features,layer){
+    layer.bindPopup(makepopUp(features),{closeButton:false,offset:L.point(0,-9)})
+}
+const shoplayer = L.geoJSON(storeList,{
+    onEachFeature:onEachFeature,
+    pointToLayer:(features,latlang)=>{
+        return L.marker(latlang,{icon})
+    }
+})
+shoplayer.addTo(map)
+
+function flyTostore(shops){
+  map.flyTo([shops.geometry.coordinates[1],shops.geometry.coordinates[0]],15,{
+    duration:2
+  })
+// console.log();
+
+}
