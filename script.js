@@ -24,3 +24,32 @@ tile.addTo(map)
 //     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 // }).addTo(map);
 
+function getDetails(){
+    const ul=document.querySelector(".list");
+    
+    // console.log(storeList[0]);
+    storeList.forEach((store)=>{
+        const li=document.createElement('li');
+        const div=document.createElement('div');
+        const a=document.createElement('a');
+        const p=document.createElement('p');
+       div.classList.add('ulli')
+        a.innerText=store.properties.name;
+     
+        a.href='#';
+        p.innerText=store.properties.address;
+        div.appendChild(a);
+        div.appendChild(p);
+        li.appendChild(div)
+        ul.appendChild(li);
+        // console.log(ul);
+        
+        
+    })
+    
+
+
+
+
+}
+getDetails()

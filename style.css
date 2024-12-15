@@ -2,19 +2,49 @@
     margin: 0;
     padding: 0;
 }
-
  main{
     display: flex;
  }
- main .d{
+.left-side{
     width: 25%;
     height: 100vh;
- background-color: aqua;
+    background-color: #fff;
+    overflow: auto;
  }
- main .c{
+
+.right-side{
     width: 75%;
     height: 100vh;
  }
  main #map{
     height: 100vh;
+}
+.left-side .heading{
+
+    background-color: #ff6800;
+    color: #fff;
+   
+}
+
+.left-side .heading h2{
+    padding: 1rem;
+}
+.left-side .heading .list{
+    overflow: hidden;
+}
+.left-side .list{
+    padding: 0 1rem;
+    list-style: none;
+}
+.left-side .ulli{
+    margin: 1rem ;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+}
+.left-side li:last-child .ulli{
+    border-bottom: none;
+}
+.left-side .ulli a{
+    text-decoration: none;
+    color: #ff6900;
+    font-weight: 4px;
 }
