@@ -18,8 +18,8 @@ const storeList = [
         "coordinates": [85.141392, 25.594095]
       },
       "properties": {
-        "name": "Pizza outlet 3",
-        "address": "Fraser Road, Patna, Bihar 800001, India",
+        "name": "Pizza outlet 2",
+       "address": "Ground Floor, Maple Plaza, Fraser Road, Near Patna Junction, Patna, Bihar 800001, India",
         "phone": "23 2323 2325"
       }
     },
